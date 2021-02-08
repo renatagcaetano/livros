@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html th:replace="~{base :: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+
     <title>Cliente</title>
 </head>
 <body>
-    <div th:each="cliente : ${lista}">
-        <h1 th:text="${cliente.nome}">Nome</h1>
-        <h2 th:text="${cliente.cpf}">CPF</h2>
-        <h2 th:text="${cliente.email}">Email</h2>
-        <h2 th:text="${cliente.endereco}">Endereco</h2>
+
+    <div class="container" id="conteudo">
+        <div class="card">
+            <div class="card-body">
+                <div th:each="cliente : ${lista}">
+                    <h1 th:text="${cliente.nome}">Nome</h1>
+                    <h2 th:text="${cliente.cpf}">CPF</h2>
+                    <h2 th:text="${cliente.email}">Email</h2>
+                    <h2 th:text="${cliente.endereco}">Endereco</h2>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </body>
 </html>
