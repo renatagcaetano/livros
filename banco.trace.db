@@ -1,0 +1,6 @@
+2021-02-09 09:22:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGEM VARCHAR(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAwMDQsNCxAODBANEA4QExYRDRASGR8dFhsVHhgYEx4YFRsVFBwYGyAZHhsjKyQpIyA6LCYx... (16459)"; SQL statement:
+INSERT INTO "PUBLIC"."PRODUTO"("ID","AUTOR","IMAGEM","NOME")VALUES(?,?,?,?) [22001-200]
+2021-02-09 09:22:19 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGEM VARCHAR(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAwMDQsNCxAODBANEA4QExYRDRASGR8dFhsVHhgYEx4YFRsVFBwYGyAZHhsjKyQpIyA6LCYx... (16459)"; SQL statement:
+INSERT INTO "PUBLIC"."PRODUTO"("ID","AUTOR","IMAGEM","NOME")VALUES(?,?,?,?) [22001-200]
