@@ -6,12 +6,12 @@
 </head>
 <body>
 <div id="conteudo" class="container">
-    <form th:object="${produtoFormularioDTO}" method="post" th:action="@{/produto/salvar}">
+    <form th:object="${dto}" method="post" th:action="@{'/produto/salvar/' + *{id}}">
         <div class="card mt-3">
             <div class="card-body">
                 <div class="form-group">
                     <label>ID: </label>
-                    <input disabled th:value="${produto.id}" class="form-control" type="text"/>
+                    <input disabled th:value="${id}" class="form-control" type="text"/>
                 </div>
 
                 <div class="form-group">
@@ -23,17 +23,19 @@
 
                 <div class="form-group">
                     <label for="autor">Autor: </label>
-                    <input  th:field="*{autor}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="Autor"/>
+                    <input th:field="*{autor}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="Autor"/>
                     <span class="small">Insira o nome do autor.</span>
                     <div th:errors="*{autor}" class="alert alert-danger"></div>
                 </div>
 
                 <div class="form-group">
                     <label for="imagem">Url da Imagem: </label>
-                    <input  th:field="*{imagem}" class="form-control" type="text" placeholder="http://imagem.jpg">
+                    <input th:field="*{imagem}" class="form-control" type="text" placeholder="http://imagem.jpg">
                     <span class="small">Insira a url da imagem do livro.</span>
                 </div>
                 <button class="btn btn-primary mt-2" type="submit">Salvar</button>
+                <a th:href="@{'/produto' + *{id}}" class="btn btn-warning mt-2" type="button">Cancelar</a>
+                <a th:href="@{'/produto/delete/' + *{id}}" class="btn btn-danger mt-2" type="button">Deletar</a>
             </div>
         </div>
     </form>
