@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html th:replace="~{base :: base(~{::title}, ~{:: #conteudo})}" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Cliente</title>
+</head>
+<body>
+<div id="conteudo" class="container">
+    <form th:object="${clienteFormularioDTO}" method="post" th:action="@{/cliente/salvar}">
+        <div class="card mt-3">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="nome">Nome: </label>
+                    <input th:field="*{nome}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="Nome">
+                    <span class="small">Insira o seu nome.</span>
+                    <div th:errors="*{nome}" class="alert alert-danger"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cpf">CPF: </label>
+                    <input  th:field="*{cpf}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="Cpf">
+                    <span class="small">Insira o seu CPF.</span>
+                    <div th:errors="*{cpf}" class="alert alert-danger"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input  th:field="*{email}" th:errorclass="is-invalid" class="form-control" type="email" placeholder="Email">
+                    <span class="small">Insira o seu email.</span>
+                    <div th:errors="*{email}" class="alert alert-danger"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço: </label>
+                    <input  th:field="*{endereco}" th:errorclass="is-invalid" class="form-control" type="text" placeholder="Endereço">
+                    <span class="small">Insira o seu endereço.</span>
+                    <div th:errors="*{endereco}" class="alert alert-danger"></div>
+                </div>
+
+                <button class="btn btn-primary mt-2" type="submit">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

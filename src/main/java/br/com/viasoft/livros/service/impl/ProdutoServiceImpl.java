@@ -36,7 +36,7 @@ public class ProdutoServiceImpl extends CrudServiceImpl<Produto, Long> implement
 
     @Override
     public void preSave(Produto produto) {
-        System.out.println("Passei pelo pré save, o ID era nulo");
+        System.out.println("Passei pelo pre-save, o ID era nulo");
     }
 
     @Override

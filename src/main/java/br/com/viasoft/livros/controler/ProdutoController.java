@@ -72,7 +72,7 @@ public class ProdutoController {
 
         Produto produto = produtoDTO.toProduto();
         produtoService.save(produto);
-        return "produto/formularioproduto";
+        return "redirect:/produto/" + produto.getId();
     }
 
     @PostMapping("/produto/salvar/{id}")
